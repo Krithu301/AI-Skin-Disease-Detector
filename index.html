@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skin Disease Detection</title>
+    <style>
+        body {
+            background-image: url('https://i.imgur.com/2b3mM1I.jpg'); /* Replace with your own bg image if needed */
+            background-size: cover;
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #ffe6f0;
+            text-shadow: 2px 2px #ff66b3;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 20px;
+            padding: 40px;
+            display: inline-block;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #ff66b3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            margin-top: 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: #ffb3d9;
+            font-size: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌸 Skin Disease Predictor 🌸</h1>
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" required><br><br>
+            <input type="submit" value="Predict 🔍">
+        </form>
+
+        {% if prediction %}
+            <h2>{{ prediction }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
